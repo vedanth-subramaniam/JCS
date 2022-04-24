@@ -1,6 +1,7 @@
 
 import torch.nn as nn
 import math
+import os
 import torch.utils.model_zoo as model_zoo
 import torch
 import torch.nn.functional as F
@@ -220,6 +221,7 @@ def res2net101_v1b(pretrained=True, **kwargs):
 
     if True:
         print("loading res2net cls pretrained model")
+        print(os.cwd)
         pretrained = torch.load(open("res2net101_v1b_26w_4s-0812c246.pth", "rb"))
         print("loaded res2net pretrained model")
     return model
