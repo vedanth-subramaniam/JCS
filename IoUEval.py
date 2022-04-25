@@ -26,10 +26,6 @@ class IoUEval:
             dt = dt > (dt.mean() * 2)
             gt = gt > 0.5
             intersect = (dt*gt).sum()
-            print("Num:")
-            print(intersect.float())
-            print("Den:")
-            print((dt.sum() + gt.sum() - intersect).float())
             iou = intersect.float() / (dt.sum() + gt.sum() - intersect).float()
             self.iou += iou
             
