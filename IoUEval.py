@@ -27,6 +27,7 @@ class IoUEval:
             gt = gt > 0.5
             intersect = (dt*gt).sum()
             iou = intersect.float() / (dt.sum() + gt.sum() - intersect).float()
+            print("hi" + iou)
             self.iou += iou
             
         self.num_images += predict.shape[0]
