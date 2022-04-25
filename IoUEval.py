@@ -26,9 +26,11 @@ class IoUEval:
             dt = dt > (dt.mean() * 2)
             gt = gt > 0.5
             intersect = (dt*gt).sum()
+            print("Num:")
+            print(intersect.float())
+            print("Den:")
+            print((dt.sum() + gt.sum() - intersect).float())
             iou = intersect.float() / (dt.sum() + gt.sum() - intersect).float()
-            print("hi:")
-            print(iou)
             self.iou += iou
             
         self.num_images += predict.shape[0]
